@@ -2,6 +2,7 @@
 
 ![Status](https://img.shields.io/badge/Status-En%20Desarrollo-blue)
 ![C++](https://img.shields.io/badge/Code-C%2B%2B-blue)
+
 Repositorio de estudio y práctica autodidacta centrado en Estructuras de Datos y Algoritmos II. Contiene implementaciones de estructuras complejas, resolución de problemas y optimización de algoritmos.
 
 ## 📌 Temas de Estudio
