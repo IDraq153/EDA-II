@@ -24,6 +24,6 @@ public:
 };
 
 // Inclusión pasiva obligatoria para enlazar la plantilla
-#include "Nodo.cpp"
+#include "Nodo.tpp"
 
 #endif
