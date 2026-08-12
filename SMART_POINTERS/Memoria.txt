@@ -1,0 +1,27 @@
+¿Diferencia entre Heap y Stack?
+
+En terminos de Estructura de Datos
+- Stack [Pila]: estructura de datos (pila de platos), agregas cosas arriba y sacas cosas de arriba... 
+En terminos de Memoria
+- Almacena datos de corta duracion o de ambito local en la RAM. Cuando una variable sale del ambito (llaves) la memoria se libera automaticamente.
+
+Heap [Monticulo]: Asignacion dinamica de la memoria, es algo mas grande que se solicita en la ejecucion del programa, tu decides cuando requieras esa memoria, te da mas responsabilidad, puesto que se tiene que liberar despues
+-------------------------------------------------------------------------------------------------
+
+Raw pointer te da problemas fugas de memoria cuando te olvidas liberar tu memoria, o liberas 2 veces al mismo te da comportamiento al azar, tambien hay punteros colgantes cuando eliminas antes de tiempo tu valor que apuntaba el puntero. 
+
+Smart Pointers arreglan esto... diseñados para ser eficientes en memoria y performance
+Resource Acquisition is Initialization RAII programming idiom... main goal is to ensure that the resource acquisition occurs at the same time that the object is initializated.
+
+El nombre no representa mucho lo que significa este concepto, lo que se busca que todo recurso finito que tengamos, tenga la capacidad de liberar su memoria una vez que salga de su area o como yo le digo sus llaves de funcion.
+
+-------------------------------------------------------------------------------------------------
+
+unique_ptr: solo un dueño del puntero, pequeño y eficiente
+shared_ptr: un raw pointer a multiples dueños no se libera la memoria hasta que todos los dueños salgan de la llave
+weak_ptr: se usa con el shared_ptr provee acceso a un objeto que 1 o mas shared_ptr lo tienen, pero no participa en el conteo de referencias. solo es usado para observar un objeto, no lo requiere para seguir vivo.
+
+
+
+
+
