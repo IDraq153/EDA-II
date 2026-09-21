@@ -8,5 +8,8 @@ int main() {
   cout << "Direccion de variable num1: " << pNum1 << std::endl;
   cout << "Accediendo a valor desde puntero: " << *pNum1 << std::endl;
 
+  delete pNum1;
+  pNum1 = nullptr;
+
   return 0;
 }
