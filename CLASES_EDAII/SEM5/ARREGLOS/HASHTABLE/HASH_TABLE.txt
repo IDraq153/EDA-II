@@ -1,0 +1,7 @@
+HASH TABLE
+Es un arreglo "inteligente" te permite conocer los indices de los elemento.
+
+
+
+
+
