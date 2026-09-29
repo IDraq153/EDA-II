@@ -32,6 +32,48 @@ public:
       tmp->setSgtNode(nodoNuevo);
     }
   }
+
+  bool search(int key) {
+    Node<T> *tmp = root;
+    if (root == nullptr) {
+      std::cout << "NO EXISTE TU LISTA!" << std::endl;
+      return false;
+    } else {
+      bool seEncontro = false;
+      while (tmp != nullptr && !seEncontro) {
+        if (tmp->getValue() == key) {
+          seEncontro = true;
+          return true;
+        } else {
+          tmp = tmp->getSgtNode();
+        }
+      }
+      return false;
+    }
+  }
+
+  bool deleteNode(T key) {
+    if (search(key)) {
+      Node<T> *actual = root;
+      Node<T> *anterior = nullptr;
+
+      if (actual->getValue() == key) {
+        root = actual->getSgtNode();
+        return 1;
+      }
+
+      while (actual != nullptr && actual->getValue() != key) {
+        anterior = actual;
+        actual = actual->getSgtNode();
+      }
+      anterior->setSgtNode(actual->getSgtNode());
+      return true;
+
+    } else {
+      std::cout << "El nodo no existe!" << std::endl;
+      return false;
+    }
+  }
 };
 
 #endif
