@@ -74,6 +74,20 @@ public:
       return false;
     }
   }
+
+  int count() {
+    int count = 0;
+    if (root == nullptr) {
+      return count;
+    } else {
+      Node<T> *tmp = root;
+      while (tmp != nullptr) {
+        tmp = tmp->getSgtNode();
+        count++;
+      }
+      return count;
+    }
+  }
 };
 
 #endif
