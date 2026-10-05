@@ -67,6 +67,7 @@ public:
         actual = actual->getSgtNode();
       }
       anterior->setSgtNode(actual->getSgtNode());
+      delete actual;
       return true;
 
     } else {
@@ -86,6 +87,56 @@ public:
         count++;
       }
       return count;
+    }
+  }
+
+  void insertarAlInicio(T value) {
+    Node<T> *nodoNuevo = new Node<T>(value);
+    if (root == nullptr) {
+      root = nodoNuevo;
+    } else {
+      nodoNuevo->setSgtNode(root);
+      root = nodoNuevo;
+    }
+  }
+
+  Node<T> *apuntarNodoFInal() {
+    if (root == nullptr) {
+      return nullptr;
+    } else {
+      Node<T> *tmp = root;
+      while (tmp->getSgtNode()->getSgtNode() != nullptr) {
+        tmp = tmp->getSgtNode();
+      }
+      std::cout << tmp->getValue()
+                << " Este es el valor del nodo que apunta al nodo final"
+                << std::endl;
+      return tmp;
+    }
+  }
+
+  void removeFirst() {
+    if (root == nullptr) {
+      std::cout << "No hay nada en esta lista enlazada!" << std::endl;
+    } else if (root->getSgtNode() == nullptr) {
+      delete root;
+    } else {
+      Node<T> *aux = root;
+      aux = root->getSgtNode();
+      delete root;
+      root = aux;
+    }
+  }
+
+  void eliminarClave(T key) {
+    if (root == nullptr) {
+      std::cout << "Que vas a eliminar si no existe!" << std::endl;
+    } else {
+      if (key == root->getValue()) {
+        removeFirst();
+      } else {
+        deleteNode(key);
+      }
     }
   }
 };
