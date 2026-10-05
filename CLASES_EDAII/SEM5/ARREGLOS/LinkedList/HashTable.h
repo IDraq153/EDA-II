@@ -24,6 +24,12 @@ public:
       tabla[i].print();
     }
   }
+  void count() {
+    for (int i = 0; i < size; i++) {
+      std::cout << "Tamanio " << i << ": " << tabla[i].count() << ' ';
+    }
+    std::cout << std::endl;
+  }
 };
 
 #endif // !HASHTABLE_H

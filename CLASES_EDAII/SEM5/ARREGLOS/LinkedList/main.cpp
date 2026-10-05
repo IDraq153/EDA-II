@@ -1,5 +1,4 @@
 #include "HashTable.h"
-#include "LinkedList.h"
 
 int main() {
   HashTable<int> tablita(10);
@@ -14,15 +13,16 @@ int main() {
   tablita.insert(9);
 
   tablita.print();
+  tablita.count();
 
-  LinkedList<int> lista;
-  lista.insert(1);
-  lista.insert(1);
-  lista.insert(1);
-  lista.insert(1);
-  lista.insert(1);
-  std::cout << lista.count() << std::endl;
-
+  // LinkedList<int> lista;
+  // lista.insert(1);
+  // lista.insert(1);
+  // lista.insert(1);
+  // lista.insert(1);
+  // lista.insert(1);
+  // std::cout << lista.count() << std::endl;
+  //
   // LinkedList<int> *linkedA = new LinkedList<int>();
   // linkedA->insert(10);
   // linkedA->insert(12);
