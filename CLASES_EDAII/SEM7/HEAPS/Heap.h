@@ -34,6 +34,37 @@ public:
     }
     std::cout << std::endl;
   }
+
+  int menor() {
+    if (last == -1) {
+      std::cout << "Tu HEAP esta vacio!" << std::endl;
+      return -1;
+    }
+
+    int min = heap[0];
+    heap[0] = heap[last];
+    last--;
+
+    int i = 0;
+    while (i < last) {
+      int izq = 2 * i + 1;
+      int der = 2 * i + 2;
+      int menorIdx = i;
+      if (izq <= last && heap[izq] < heap[menorIdx]) {
+        menorIdx = izq;
+      }
+      if (der <= last && heap[der] < heap[menorIdx]) {
+        menorIdx = der;
+      }
+      if (menorIdx == i) {
+        break;
+      }
+      std::swap(heap[i], heap[menorIdx]);
+      i = menorIdx;
+    }
+
+    return min;
+  }
 };
 
 #endif

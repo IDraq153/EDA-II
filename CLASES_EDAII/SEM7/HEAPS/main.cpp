@@ -15,6 +15,8 @@ int main() {
   heapcito.insert(11);
   heapcito.insert(7);
 
+  std::cout << heapcito.menor() << std::endl;
+  std::cout << heapcito.menor() << std::endl;
   heapcito.print();
   return 0;
 }
