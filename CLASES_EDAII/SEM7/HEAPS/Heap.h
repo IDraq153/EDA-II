@@ -28,6 +28,20 @@ public:
       }
     }
   }
+  void insertM(int n) {
+    if (last + 1 >= tam) {
+      std::cout << "Heap lleno!" << std::endl;
+    } else {
+      last++;
+      heap[last] = n;
+      int i = last;
+
+      while (i > 0 && heap[i] > heap[(i - 1) / 2]) {
+        std::swap(heap[i], heap[(i - 1) / 2]);
+        i = (i - 1) / 2;
+      }
+    }
+  }
   void print() {
     for (int i = 0; i < last + 1; i++) {
       std::cout << heap[i] << " - ";
@@ -46,7 +60,7 @@ public:
     last--;
 
     int i = 0;
-    while (i < last) {
+    while (true) {
       int izq = 2 * i + 1;
       int der = 2 * i + 2;
       int menorIdx = i;
@@ -62,8 +76,36 @@ public:
       std::swap(heap[i], heap[menorIdx]);
       i = menorIdx;
     }
+  }
+  int mayor() {
+    if (last == -1) {
+      return -1;
+    }
+    int mayor = heap[0];
+    heap[0] = heap[last];
+    last--;
 
-    return min;
+    int i = 0; // cabeza
+
+    while (true) {
+      int der = 2 * i + 2;
+      int izq = 2 * i + 1;
+      int mayorInd = i;
+
+      if (izq < last && heap[izq] > heap[i]) {
+        mayorInd = izq;
+      }
+      if (der < last && heap[der] > heap[i]) {
+        mayorInd = der;
+      }
+
+      if (mayorInd == i) {
+        break;
+      }
+      std::swap(heap[mayorInd], heap[i]);
+      i = mayorInd;
+    }
+    return mayor;
   }
 };
 

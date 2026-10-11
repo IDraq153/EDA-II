@@ -2,21 +2,20 @@
 
 int main() {
   Heap<int> heapcito(15);
-  heapcito.insert(90);
-  heapcito.insert(80);
-  heapcito.insert(66);
-  heapcito.insert(67);
-  heapcito.insert(50);
-  heapcito.insert(23);
-  heapcito.insert(17);
-  heapcito.insert(16);
-  heapcito.insert(15);
-  heapcito.insert(12);
-  heapcito.insert(11);
-  heapcito.insert(7);
+  heapcito.insertM(90);
+  heapcito.insertM(80);
+  heapcito.insertM(66);
+  heapcito.insertM(67);
+  heapcito.insertM(50);
+  heapcito.insertM(23);
+  heapcito.insertM(17);
+  heapcito.insertM(16);
+  heapcito.insertM(15);
+  heapcito.insertM(12);
+  heapcito.insertM(11);
+  heapcito.insertM(7);
 
-  std::cout << heapcito.menor() << std::endl;
-  std::cout << heapcito.menor() << std::endl;
+  std::cout << heapcito.mayor() << std::endl;
   heapcito.print();
   return 0;
 }
